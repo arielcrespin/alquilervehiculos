@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang=es>
+	<head>
+		<title>Resumir video por cookie o localStorage</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			#principal {
+				display:flex;
+				flex-direction:row;
+			}
+			#derecha {
+				display:flex;
+				flex-direction:column;
+				justify-content:center;
+				align-items:center;
+			}
+			button,video {
+				vertical-align: middle;
+			}
+			input {
+				text-align:right;
+			}
+			.arrow {
+			  border: solid black;
+			  border-width: 0 3px 3px 0;
+			  display: inline-block;
+			  padding: 3px;
+			  cursor:pointer;
+			}
+			.up {
+			  transform: rotate(-135deg);
+			  -webkit-transform: rotate(-135deg);
+			}
+
+			.down {
+			  transform: rotate(45deg);
+			  -webkit-transform: rotate(45deg);
+			}
+		</style>
+	</head>
+	<body onload="resumir()" onunload="guardar()">
+		<script>
+			function guardar(){
+				localStorage.setItem("tiempo",document.getElementById("video").currentTime);
+			}
+			function resumir(){
+				let tiempo;
+				if(tiempo=localStorage.getItem("tiempo"))
+					document.getElementById("video").currentTime=tiempo;
+			}
+			function subir(){
+				let ingreso=document.getElementById('input');
+				let valor=parseInt(ingreso.value);
+				if(ingreso.value<parseInt(document.getElementById('video').duration))
+					ingreso.value=valor+100;
+			}
+			function bajar(){
+				let ingreso=document.getElementById('input');
+				let valor=parseInt(ingreso.value);
+				if(valor>100)
+					ingreso.value=valor-100;
+			}
+			function ir(){
+				let patron=/\d{1,2}*\d{1,2}*\d{1,2}/;
+				document.getElementById("video").currentTime=document.getElementById("input").value;
+			}
+		</script>
+		<div id=principal>
+			<div id=izquierda>
+				<video width="480" height="360" controls id=video>
+					<source src="ateens.mp4" type="video/mp4">
+					<p>Tu navegador no soporta el video.</p>
+				</video>
+			</div>
+			<div id=derecha>
+				<button type=button onclick="javascript:localStorage.removeItem('tiempo')">
+					Borrar tiempo.
+				</button>
+				<button type=button onclick="javascript:document.getElementById('video').currentTime=0">
+					Reiniciar video.
+				</button>
+				<button type=button onclick="guardar()">
+					Guardar tiempo.
+				</button>
+				<button type=button onclick="resumir()">
+					Restaurar tiempo.
+				</button>
+				<span>
+					<label for=input>Ir a tiempo:</label>
+					<input type=text size=4 value=100 id=input name=input>
+					<span id=flechas>
+						<i class="arrow up" onclick="subir()"></i>&nbsp;&nbsp;<i class="arrow down" onclick="bajar()"></i>
+					</span>
+					<button type=button onclick="ir()">Ir</button>
+				</span>
+				<button type=button onclick="alert(document.getElementById('video').duration)">Duraci&oacute;n</button>
+			</div>
+		</div>
+	</body>
+<button>

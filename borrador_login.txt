@@ -1,0 +1,1 @@
+encodeURIComponent(document.forms["login"].elements["usuario"])+"&contrasena="+encodeURIComponent(document.forms["login"].elements["contrasena"]

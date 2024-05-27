@@ -61,9 +61,11 @@
 				if(valor>100)
 					ingreso.value=valor-100;
 			}
-			function ir(){
-				let patron=/\d{1,2}*\d{1,2}*\d{1,2}/;
-				document.getElementById("video").currentTime=document.getElementById("input").value;
+			function ir(e){
+				
+				let valor=0;
+				if((valor=document.getElementById("input").value)<=parseInt(document.getElementById("video").duration))
+					document.getElementById("video").currentTime=valor;
 			}
 		</script>
 		<div id=principal>
@@ -88,7 +90,7 @@
 				</button>
 				<span>
 					<label for=input>Ir a tiempo:</label>
-					<input type=text size=4 value=100 id=input name=input>
+					<input type=text size=4 value=100 id=input name=input onkeydown="javascript:if(event.keyCode==13) ir();">
 					<span id=flechas>
 						<i class="arrow up" onclick="subir()"></i>&nbsp;&nbsp;<i class="arrow down" onclick="bajar()"></i>
 					</span>

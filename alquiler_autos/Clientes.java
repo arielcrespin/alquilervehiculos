@@ -7,7 +7,7 @@ public class Cliente{
 		return cbu;
 	}
 	public void establecerPatente(String p){
-		this.patente=patente;
+		this.patente=p;
 	}
 	public String obtenerPatente() {
 		return patente;

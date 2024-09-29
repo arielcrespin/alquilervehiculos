@@ -1,0 +1,9 @@
+Sistema de alquiler de vehículos online/offline
+
+Sistema para dueños de galpones, que pone a disposición del mismo vehículos de oferentes 
+para su alquiler por particulares.
+El cliente ingresa a su cuenta y elige los vehículos disponibles en la plataforma,
+ de acuerdo a su tipo  de licencia, y establece el rango de tiempo de alquiler en el calendario.
+Tanto el dueño del galpón como el locador y el locatario pueden consultar el historial de alquileres de un vehículo en particular.
+En caso del dueño del vehículo, solo podrá gestionar los suyos propios.
+Los alquileres son gestionados unicamente por el interesado y el galpón.

@@ -1,19 +1,21 @@
 Gestión de alquileres de vehículos.
 -----------------------------------
 
-Actor primario:Administrador/Dueño del galpón.		Actor secundario: Dueño del/los vehículo/s.		Actor terciario: Locatario.
+Actor primario:Administrador/Dueño del galpón.
+Actores secundarios: Interesados en alquilar vehículos.
 
-Caso de uso: alquiler de vehículos de particulares.
+Caso de uso: alquiler de vehículos.
 
 Condiciones previas (Dueño del galpón):
-	Dueño del galpón habilitado como administrador del sistema. Debe poseer datos de los locadores que ponen a disposición del galpón uno o 
-	más vehículos.
-Condiciones previas (Locatario): Licencia de conducir, acorde al vehículo a alquilar.
+	Dueño habilitado como administrador del sistema, y sus vehículos registrados en la base de datos,y logueado en el sistema.
+Condiciones previas (interesado): Licencia de conducir, acorde al vehículo a alquilar, y en caso de estar registrado,
+ que esté asentado el medio de pago.
 
 Escenarios de uso:
-	1 - El administrador da de alta al dueño del vehículo con sus datos personales, registrando marca, modelo, patente y seguro del vehículo.
-		Si ya está registrado el/la dueño/a, saltar al paso 2.
-	2 - El administrador selecciona un vehículo, el plazo de alquiler, el medio de pago, y registra los datos personales de quien va a
-		 utilizar el vehículo. Se da a "aceptar", y finaliza el proceso de toma de vehículo para su alquiler.
-		Si el locatario ya está registrado, o se selecciona primero un rango de fecha y después un vehículo, o primero el vehículo 
-		y después el rango de fecha. Finalmente se da "aceptar" para terminar el proceso de alquiler.
+	1 - El interesado elige un vehículo de entre los disponibles y dentro de las posibilidades de su licencia,
+		 iniciando el alquiler en el mismo momento o a futuro con 48 horas de anticipación, si está dado de alta en el sistema.
+		 Caso contrario, saltar al paso 2.
+		 En caso de alquilar con 48 horas,realiza un depósito de seña del 50%. El vehículo elegido pasa a estar
+		  en estado "no disponible" en la plataforma.
+	2 - Se da de alta al interesado, registrando sus datos personales y su licencia de conducir, incluído el medio de pago, se registra la
+		 seña, y se procede a asentar el alquiler.

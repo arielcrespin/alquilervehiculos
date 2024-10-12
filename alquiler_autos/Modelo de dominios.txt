@@ -1,8 +1,8 @@
 
-			alquila a->
-	Cliente ---------- Particular
-(String usuario			(id
-String contraseña)		contraseña
+		   alquila a->
+	Cliente ----------------Particular
+   (String usuario		(id
+    String contraseña)		contraseña
 				tipo_licencia)
 	|				|
 	|				|

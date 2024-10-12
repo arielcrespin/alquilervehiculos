@@ -3,16 +3,16 @@
 	Cliente ---------- Particular
 (String usuario			(id
 String contraseña)		contraseña
-						tipo_licencia)
-		|						|
-		|						|
-		|						|
-		|   Registra			|	alquila
-		|						|
-		|						|
-		|						|
-	Vehículo +					|
-	(Marca,		----------------|
-	modelo,
-	año,
-	condiciones)
+				tipo_licencia)
+	|				|
+	|				|
+	|				|
+	|   Registra			|   alquila
+	|				|
+	|				|
+	|				|
+    Vehículo +				|
+    (Marca,	------------------------|
+    modelo,
+    año,
+    condiciones)

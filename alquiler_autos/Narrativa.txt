@@ -1,6 +1,6 @@
 Sistema de alquiler de vehículos
-Sistema de gestion de alquileres de cualquier tipo de vehiculos donde se fijan periodos de alquiler y la disponibilidad.
-Para concretar el alquiler se precisa saber si el interesado tiene carnet de conducir 
+Gestion de alquileres de cualquier tipo de vehiculos donde se fijan los periodos de alquiler.
+Para concretar el alquiler se precisa saber si el interesado tiene carnet de conducir y si el tipo y vehículo está disponible.
 Se calcula el montos de acuerdo al tipo de vehiculo y la duracion del alquiler.
-Reservaciones como maximo por 48 hrs, mediante seña (mitad del alquiler) y se le devuelve el importe hasta 30 dias.
-En caso de acceso web unicamente si es cliente y la reserva es en el dia.
+Reservaciones como maximo por 48 hrs, mediante seña (mitad del alquiler) y en caso de no concretar la reservación se le devuelve el importe, como máximo hasta los 30 dias.
+En caso de acceso web la reserva es en el dia.
